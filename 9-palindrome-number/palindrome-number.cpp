@@ -5,16 +5,17 @@ public:
             return false;
         }
 
-        long long int reverse = 0;
+        long long int answer = 0;
         int orginal = x;
         int i = 0;
-        while (x > 0) {
-            int rem = x % 10;
-            reverse = reverse * 10 + rem;
-            i++;
-            x = x / 10;
+       
+       while (x != 0) { 
+        int last_digit = x % 10;
+        answer = answer * 10 + last_digit; 
+        x /= 10; 
         }
-        if (orginal == reverse) {
+       
+        if (orginal == answer) {
             return true;
         }
         else return false;
